@@ -1,4 +1,14 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { SignLegacy, SignersList } from 'legacy-xyz';
+
+
+function App() {
+  return (
+    <SignLegacy projectId="legacyxyz" />
+    <SignersList projectId="legacyxyz" />
+  )
+}
 
 export default function Home() {
   return (
@@ -10,41 +20,34 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Web3 @ UofT Engineering 
         </h1>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <div className="title">
+          Read{' '}
+        <Link href="/posts/defi">
+          <a>this page!</a>
+        </Link>
+        </div>
+
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h3> DAOs &rarr;</h3>
+            <p>Workthrough of governance proposals.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a className="card">
+            <h3>DeFi &rarr;</h3>
+            <p>Staking and build your own protocol</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
+          <a className="card"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h3>NFTs &rarr;</h3>
+            <p>Discover NFTs</p>
           </a>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
