@@ -1,7 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { SignLegacy, SignersList } from 'legacy-xyz';
+import dynamic from 'next/dynamic'
 
+const SignLegacy = dynamic(() =>
+  import('legacy-xyz').then((legacy) => legacy.SignLegacy),
+  { ssr: false }
+)
+
+const SignersList = dynamic(() =>
+  import('legacy-xyz').then((legacy) => legacy.SignersList),
+  { ssr: false }
+)
 
 function App() {
   return (
